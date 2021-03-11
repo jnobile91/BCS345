@@ -1,3 +1,8 @@
+/*
+Joseph Nobile
+Lab Assignment #3
+3/12/2021
+*/
 package labassignment3;
 
 import javafx.fxml.FXML;
@@ -5,6 +10,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Circle;
 
+// Calls all of the shapes defined in the House.fxml file.
 public class HouseController {
 
     @FXML
