@@ -6,17 +6,14 @@ public class JavaApplication1 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
-        int sum = 0;
-        double average = 0;
-        
-        for (int i = 0; i < 10; i++)
+
+        int x = 10, y = 20;
+        while (y < 100)
         {
-            System.out.println("Please enter a value for entry #" + (i+1));
-            sum = sum+ sc.nextInt();
+            x += y;
+            y +=20;
         }
-        average = (double)sum/10;
-        System.out.println("The average is " + average);
+        System.out.print(x);
     }
     
 }
