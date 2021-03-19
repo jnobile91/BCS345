@@ -1,3 +1,8 @@
+/*
+    Joseph Nobile
+    Lab 4 - Calculator
+    3/19/2021
+*/
 package labassignment4;
 
 import javafx.event.ActionEvent;
