@@ -148,8 +148,8 @@ public class LayoutGUIController {
     @FXML
     void processResult(ActionEvent event) {
         // Stores first number into num1 and second number into num2
-        int num1 = Integer.parseInt(operand1);
-        int num2 = Integer.parseInt(txt1.getText());
+        double num1 = Integer.parseInt(operand1);
+        double num2 = Integer.parseInt(txt1.getText());
         
         // Checks which operation is selected, then calculates result
         if(currentArthOp.equals("ADD")) {
@@ -185,7 +185,7 @@ public class LayoutGUIController {
     @FXML
     private void squareOp(ActionEvent event) {
         // Collects input in text field
-        int num1 = Integer.parseInt(txt1.getText());
+        long num1 = Integer.parseInt(txt1.getText());
         
         // Converts currentArthOp to SQUARE
         if(((Button)event.getSource()).getText().equals("x^2")) {
