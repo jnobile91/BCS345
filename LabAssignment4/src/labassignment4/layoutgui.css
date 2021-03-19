@@ -1,19 +1,24 @@
+/* Background color */
 .mainFxmlClass {
     -fx-background-color:#4d4d4d;
 }
 
+/* Default button color with no interaction */
 Button {
     -fx-background-color:#e5e5e5;
 }
 
+/* Hover/mouseover button color */
 Button:hover {
     -fx-background-color:lightgoldenrodyellow;
 }
 
+/* Button pressed color */
 Button:pressed {
     -fx-background-color:yellow;
 }
 
+/* Default text field color */
 .TextField {
     -fx-background-color:#e5e5e5;
 }
