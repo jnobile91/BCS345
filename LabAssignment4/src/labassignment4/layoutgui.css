@@ -1,0 +1,19 @@
+.mainFxmlClass {
+    -fx-background-color:#4d4d4d;
+}
+
+Button {
+    -fx-background-color:#e5e5e5;
+}
+
+Button:hover {
+    -fx-background-color:lightgoldenrodyellow;
+}
+
+Button:pressed {
+    -fx-background-color:yellow;
+}
+
+.TextField {
+    -fx-background-color:#e5e5e5;
+}
