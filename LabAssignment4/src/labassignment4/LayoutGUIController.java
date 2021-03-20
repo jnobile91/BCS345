@@ -150,16 +150,20 @@ public class LayoutGUIController {
         // Stores first number into num1 and second number into num2
         double num1 = Integer.parseInt(operand1);
         double num2 = Integer.parseInt(txt1.getText());
+        double sum = (num1 + num2);
+        double sub = (num1 - num2);
+        double prod = (num1 * num2);
+        double div = (num1 / num2);
         
         // Checks which operation is selected, then calculates result
         if(currentArthOp.equals("ADD")) {
-            txt1.setText("" + (num1 + num2));
+            txt1.setText("" + (sum));
         }
         else if(currentArthOp.equals("SUBTRACT")) {
-            txt1.setText("" + (num1 - num2));
+                txt1.setText("" + (sub));
         }
         else if(currentArthOp.equals("MULTIPLY")) {
-            txt1.setText("" + (num1 * num2));
+            txt1.setText("" + (prod));
         }
         else if(currentArthOp.equals("DIVIDE")) {
             // Checks to see if user divided by 0, then prints
@@ -168,7 +172,7 @@ public class LayoutGUIController {
                 txt1.setText("Not a number");
             }
             else {
-                txt1.setText("" + (num1 / num2));
+                txt1.setText("" + (div));
             }
         }
     }
