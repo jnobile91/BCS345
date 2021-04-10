@@ -20,6 +20,7 @@ public class BCS345_Week9Assignment extends Application {
         Random rand = new Random();
         Group gp = new Group();
         
+        // Initializes center circle.
         int centerX = 250;
         int centerY = 250;
         int radius = 200;
@@ -128,23 +129,25 @@ public class BCS345_Week9Assignment extends Application {
         
         point1.setOnMouseDragged(e -> { 
             if (point1.contains(e.getX(), e.getY())) {
-                if (e.getX() > 250){
+                // Recalculates theta based on mouse position,
+                // then aligns point along the right half of the circle.
+                if (e.getX() > centerX){
                 double newPoint1x = e.getX();
                 double newPoint1y = e.getY();
-                double dist1x = (250 - newPoint1x);
-                double dist1y = (250 - newPoint1y);
+                double dist1x = (centerX - newPoint1x);
+                double dist1y = (centerY - newPoint1y);
                 double newTheta1 = Math.atan(dist1y/dist1x);
                 double calcPoint1x = centerX + radius * Math.cos(newTheta1);
                 double calcPoint1y = centerY + radius * Math.sin(newTheta1);
                 point1.setCenterX(calcPoint1x);
                 point1.setCenterY(calcPoint1y);
                 }
-
-                else if (e.getX() < 250){
+                // Same as previous code, only for the left half of the circle.
+                else if (e.getX() < centerX){
                 double newPoint1x = e.getX();
                 double newPoint1y = e.getY();
-                double dist1x = (250 - newPoint1x);
-                double dist1y = (250 - newPoint1y);
+                double dist1x = (centerX - newPoint1x);
+                double dist1y = (centerY - newPoint1y);
                 double newTheta1 = Math.atan(dist1y/dist1x) + pi;
                 double calcPoint1x = centerX + radius * Math.cos(newTheta1);
                 double calcPoint1y = centerY + radius * Math.sin(newTheta1);
@@ -174,19 +177,22 @@ public class BCS345_Week9Assignment extends Application {
                     / (-2 * newDistLine3 * newDistLine2));
                 
                 // Keeps text box on right side of point if on right side of circle.
-                if (point1.getCenterX() > 250) {
+                if (point1.getCenterX() > centerX) {
                 text[0].setX(point1.getCenterX()+15);
                 text[0].setY(point1.getCenterY()+5);
                 text[0].setText(String.format("%.2f", Math.toDegrees(angle[0])));
-                text[0].setFill(Color.BLACK);
+                text[1].setText(String.format("%.2f", Math.toDegrees(angle[1])));
+                text[2].setText(String.format("%.2f", Math.toDegrees(angle[2])));
                 gp.getChildren().add(text[0]);
+                
                 }
                 // Resituates text box on the left side if point is on left half of circle.
-                else if (point1.getCenterX() < 250) {
+                else if (point1.getCenterX() < centerX) {
                 text[0].setX(point1.getCenterX()-40);
                 text[0].setY(point1.getCenterY()+5);
                 text[0].setText(String.format("%.2f", Math.toDegrees(angle[0])));
-                text[0].setFill(Color.BLACK);
+                text[1].setText(String.format("%.2f", Math.toDegrees(angle[1])));
+                text[2].setText(String.format("%.2f", Math.toDegrees(angle[2])));
                 gp.getChildren().add(text[0]);
                 }
             }
@@ -196,24 +202,25 @@ public class BCS345_Week9Assignment extends Application {
         point2.setOnMouseDragged(e -> { 
             if (point2.contains(e.getX(), e.getY())) {
                 
-                // Recompute and display angles
-                if (e.getX() > 250){
+                // Recalculates theta based on mouse position,
+                // then aligns point along the right half of the circle.
+                if (e.getX() > centerX){
                 double newPoint2x = e.getX();
                 double newPoint2y = e.getY();
-                double dist2x = (250 - newPoint2x);
-                double dist2y = (250 - newPoint2y);
+                double dist2x = (centerX - newPoint2x);
+                double dist2y = (centerY - newPoint2y);
                 double newTheta2 = Math.atan(dist2y/dist2x);
                 double calcPoint2x = centerX + radius * Math.cos(newTheta2);
                 double calcPoint2y = centerY + radius * Math.sin(newTheta2);
                 point2.setCenterX(calcPoint2x);
                 point2.setCenterY(calcPoint2y);
                 }
-
-                else if (e.getX() < 250){
+                // Same as previous code, only for the left half of the circle.
+                else if (e.getX() < centerX){
                 double newPoint2x = e.getX();
                 double newPoint2y = e.getY();
-                double dist2x = (250 - newPoint2x);
-                double dist2y = (250 - newPoint2y);
+                double dist2x = (centerX - newPoint2x);
+                double dist2y = (centerY - newPoint2y);
                 double newTheta2 = Math.atan(dist2y/dist2x) + pi;
                 double calcPoint2x = centerX + radius * Math.cos(newTheta2);
                 double calcPoint2y = centerY + radius * Math.sin(newTheta2);
@@ -245,19 +252,21 @@ public class BCS345_Week9Assignment extends Application {
                     / (-2 * newDistLine3 * newDistLine2));
                 
                 // Keeps text box on right side of point if on right side of circle.
-                if (point2.getCenterX() > 250) {
+                if (point2.getCenterX() > centerX) {
                 text[1].setX(point2.getCenterX()+15);
                 text[1].setY(point2.getCenterY()+5);
+                text[0].setText(String.format("%.2f", Math.toDegrees(angle[0])));
                 text[1].setText(String.format("%.2f", Math.toDegrees(angle[1])));
-                text[1].setFill(Color.BLACK);
+                text[2].setText(String.format("%.2f", Math.toDegrees(angle[2])));
                 gp.getChildren().add(text[1]);
                 }
                 // Resituates text box on the left side if point is on left half of circle.
-                else if (point2.getCenterX() < 250) {
+                else if (point2.getCenterX() < centerX) {
                 text[1].setX(point2.getCenterX()-40);
                 text[1].setY(point2.getCenterY()+5);
+                text[0].setText(String.format("%.2f", Math.toDegrees(angle[0])));
                 text[1].setText(String.format("%.2f", Math.toDegrees(angle[1])));
-                text[1].setFill(Color.BLACK);
+                text[2].setText(String.format("%.2f", Math.toDegrees(angle[2])));
                 gp.getChildren().add(text[1]);
                 }
             }
@@ -267,24 +276,25 @@ public class BCS345_Week9Assignment extends Application {
         point3.setOnMouseDragged(e -> { 
             if (point3.contains(e.getX(), e.getY())) {
                 
-                // Recompute and display angles
-                if (e.getX() > 250){
+                // Recalculates theta based on mouse position,
+                // then aligns point along the right half of the circle.
+                if (e.getX() > centerX){
                 double newPoint3x = e.getX();
                 double newPoint3y = e.getY();
-                double dist3x = (250 - newPoint3x);
-                double dist3y = (250 - newPoint3y);
+                double dist3x = (centerX - newPoint3x);
+                double dist3y = (centerY - newPoint3y);
                 double newTheta3 = Math.atan(dist3y/dist3x);
                 double calcPoint3x = centerX + radius * Math.cos(newTheta3);
                 double calcPoint3y = centerY + radius * Math.sin(newTheta3);
                 point3.setCenterX(calcPoint3x);
                 point3.setCenterY(calcPoint3y);
                 }
-
-                else if (e.getX() < 250){
+                // Same as previous code, only for the left half of the circle.
+                else if (e.getX() < centerX){
                 double newPoint3x = e.getX();
                 double newPoint3y = e.getY();
-                double dist3x = (250 - newPoint3x);
-                double dist3y = (250 - newPoint3y);
+                double dist3x = (centerX - newPoint3x);
+                double dist3y = (centerY - newPoint3y);
                 double newTheta3 = Math.atan(dist3y/dist3x) + pi;
                 double calcPoint3x = centerX + radius * Math.cos(newTheta3);
                 double calcPoint3y = centerY + radius * Math.sin(newTheta3);
@@ -316,23 +326,27 @@ public class BCS345_Week9Assignment extends Application {
                     / (-2 * newDistLine3 * newDistLine2));
                 
                 // Keeps text box on right side of point if on right side of circle.
-                if (point3.getCenterX() > 250) {
+                if (point3.getCenterX() > centerX) {
                 text[2].setX(point3.getCenterX()+15);
                 text[2].setY(point3.getCenterY()+5);
+                text[0].setText(String.format("%.2f", Math.toDegrees(angle[0])));
+                text[1].setText(String.format("%.2f", Math.toDegrees(angle[1])));
                 text[2].setText(String.format("%.2f", Math.toDegrees(angle[2])));
-                text[2].setFill(Color.BLACK);
                 gp.getChildren().add(text[2]);
                 }
-                else if (point3.getCenterX() < 250) {
+                // Resituates text box on the left side if point is on left half of circle.
+                else if (point3.getCenterX() < centerX) {
                 text[2].setX(point3.getCenterX()-40);
                 text[2].setY(point3.getCenterY()+5);
+                text[0].setText(String.format("%.2f", Math.toDegrees(angle[0])));
+                text[1].setText(String.format("%.2f", Math.toDegrees(angle[1])));
                 text[2].setText(String.format("%.2f", Math.toDegrees(angle[2])));
-                text[2].setFill(Color.BLACK);
                 gp.getChildren().add(text[2]);
                 }
             }
         });
 
+        // Sets large circle to color white with a black border.
         c1.setFill(Color.WHITE);
         c1.setStroke(Color.BLACK);
 
