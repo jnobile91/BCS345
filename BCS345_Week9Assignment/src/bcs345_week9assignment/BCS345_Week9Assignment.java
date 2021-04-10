@@ -1,3 +1,12 @@
+/*
+    BCS 345 - Week 9 Lab Assignment
+    "Triangle within a circle"
+    Authors:
+        Steven Lannon
+        Juan Marrero
+        Joseph Nobile
+        Michael Trant
+*/
 package bcs345_week9assignment;
 
 import javafx.application.Application;
