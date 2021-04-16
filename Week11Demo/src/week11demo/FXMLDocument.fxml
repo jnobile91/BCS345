@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="week11demo.FXMLDocumentController">
+   <children>
+      <Button fx:id="mZoom" layoutX="443.0" layoutY="13.0" mnemonicParsing="false" onAction="#mZoomInOnText" text="Zoom In" />
+      <TextArea fx:id="mEditor" layoutX="14.0" layoutY="46.0" prefHeight="344.0" prefWidth="568.0" />
+      <Button fx:id="mZoomOut" layoutX="514.0" layoutY="13.0" mnemonicParsing="false" onAction="#mZoomOutOnText" text="Zoom Out" />
+      <MenuBar layoutX="14.0" layoutY="13.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="mOpenFile" mnemonicParsing="false" onAction="#mOpenTextFileFunc" text="Open" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
