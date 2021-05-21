@@ -60,4 +60,25 @@ public class JavaExamCodeQ1 {
         studentAddress = newAddress;
     }
 }
+    
+    public class Book {
+        // int can not have delimeters
+        protected int pages = 1500;
+        
+        // set methods are void, can not call references as argument
+        public void setPages(int p)
+        {
+            // must use variable name different than initialized
+            pages = p;
+            System.out.println("This is a method that sets the number of pages");
+        }
+        
+        // get methods must be of a data type (here we return in)
+        public int getPages()
+        {
+            System.out.println("This is a method that returns the number of pages");
+            return pages;
+        }
+    }
+    
 }

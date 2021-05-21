@@ -1,13 +1,14 @@
 /*
     Joseph Nobile
-    Problem Solving Exam - 4/21/2021
-    Calculate the GCD of 2 numbers
+    Final Exam - 5/12/2021
+    Calculate the average of 3 numbers
 */
 package javaexamq2;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class FXMLDocumentController {
@@ -19,43 +20,32 @@ public class FXMLDocumentController {
     private TextField num2;
     
     @FXML
-    private Button gcdButton;
+    private TextField num3;
+    
+    @FXML
+    private Button avgButton;
+    
+    @FXML
+    private Label solutionLabel;
 
     @FXML
-    private TextField solutionBox;
-
-    @FXML
-    public void calcGCD(ActionEvent event) {
+    public void calcAVG(ActionEvent event) {
         
-        // Converts text field 'num1' into data type int
-        double d1 = Double.parseDouble(num1.getText());
-        int x = (int)d1; 
+        // Converts text fields into type double
+        double x = Double.parseDouble(num1.getText());
+        double y = Double.parseDouble(num2.getText());
+        double z = Double.parseDouble(num3.getText());
         
-        // Converts text field 'num2' into data type int
-        double d2 = Double.parseDouble(num2.getText());
-        int y = (int)d2; 
+        // Initializes average variable
+        double avg = (x + y + z) / 3;
         
-        int gcdOfXY = 0;
+        // Declares a string to eventually convert from double avg
+        String calcAVG;
         
-        // Loops through every value up to highest value of x and y
-        for (int i = 1; i <= x && i <= y; i++) {
-            
-            // Checks to see if the remainder of x or y divided by i
-            // is zero, then sets gcdOfXY to i. It will iterate through
-            // the highest value of x or y and continue assigning
-            // gcdOfXY to i until it achieves the GCD.
-            if (x % i == 0 && y % i == 0) {
-                gcdOfXY = i;
-            }
-        }
+        // Converts double avg into string calcAVG
+        calcAVG = Double.toString(avg);
         
-        // Declares a string to eventually convert from int gcdOfXY
-        String calcGCD;
-        
-        // Converts int gcdOfXY into string calcGCD
-        calcGCD = Integer.toString(gcdOfXY);
-        
-        // Sets calculated GCD in the text box
-        solutionBox.setText("The GCD is : " + calcGCD);
+        // Sets calculated average in the text box
+        solutionLabel.setText("The average is : " + calcAVG);
     }
 }

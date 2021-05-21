@@ -31,8 +31,8 @@ import javafx.scene.text.Text;
 public class FXMLDocumentController implements Initializable {
     private String selectedShape="LINE";
     private Color selectedColor=Color.BLUE;
-    double srtX=0, srtY=0;
-    double endX=0, endY=0;
+    double srtX = 0, srtY = 0;
+    double endX = 0, endY = 0;
     
     private Label label;
     @FXML
@@ -67,7 +67,8 @@ public class FXMLDocumentController implements Initializable {
         srtX=event.getX();
         srtY=event.getY();
     }
-@FXML
+    
+    @FXML
     private void startDraw(MouseEvent event) {
         endX=event.getX();
         endY=event.getY();
